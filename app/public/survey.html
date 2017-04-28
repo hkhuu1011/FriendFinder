@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Friend Finder</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!-- Chosen -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+</head>
+
+<body>
+	<!-- Survey Questions -->
+	<div class="container">
+		<h2>Survey Questions</h2>
+		<hr>
+
+		<h3>About You</h3>
+		<h4>Name (Required)</h4>
+		<input type="text" name id="name" class="form-control" required>
+
+		<h4>Link to Photo Image(Required)</h4>
+		<input type="text" name id="photo" class="form-control" required>
+		<hr>
+
+		<h3>Question 1</h3>
+		<h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
+		<select data-placeholder="Select An Option" class="chosen-select" id="num1">
+			<option value=""></option>
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+			</select>
+
+		<h3>Question 2</h3>
+		<h4>Generally speaking, you rely more on your experience than your imagination.</h4>
+		<select data-placeholder="Select An Option" class="chosen-select" id="num2">
+			<option value=""></option>
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+			</select>
+
+		<h3>Question 3</h3>
+		<h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+		<select data-placeholder="Select An Option" class="chosen-select" id="num3">
+			<option value=""></option>
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+			</select>
+
+		<h3>Question 4</h3>
+		<h4>You rarely do something just out of sheer curiosity.</h4>
+		<select data-placeholder="Select An Option" class="chosen-select" id="num4">
+			<option value=""></option>
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+			</select>
+
+		<h3>Question 5</h3>
+		<h4>People can rarely upset you.</h4>
+		<select data-placeholder="Select An Option" class="chosen-select" id="num5">
+			<option value=""></option>
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+			</select>
+
+		<h3>Question 6</h3>
+		<h4>It is often difficult for you to relate to other people’s feelings.</h4>
+		<select data-placeholder="Select An Option" class="chosen-select" id="num6">
+			<option value=""></option>
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+			</select>
+
+		<h3>Question 7</h3>
+		<h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
+		<select data-placeholder="Select An Option" class="chosen-select" id="num7">
+			<option value=""></option>
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+			</select>
+
+		<h3>Question 8</h3>
+		<h4>You rarely get carried away by fantasies and ideas.</h4>
+		<select data-placeholder="Select An Option" class="chosen-select" id="num8">
+			<option value=""></option>
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+			</select>
+
+		<h3>Question 9</h3>
+		<h4>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h4>
+		<select data-placeholder="Select An Option" class="chosen-select" id="num9">
+			<option value=""></option>
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+			</select>
+
+		<h3>Question 10</h3>
+		<h4>You feel more energetic after spending time with a group of people.</h4>
+		<select data-placeholder="Select An Option" class="chosen-select" id="num10">
+			<option value=""></option>
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+			</select>
+
+		<br><br>
+		<!-- Submit button -->
+		<button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">Submit</button>
+		<hr>
+
+	<footer class="footer">
+		<div class="container">
+			<p><a href="api/friendsData">API Friends List</a> | <a href="https://github.com/hkhuu1011/FriendFinder.git">GitHubRepo</a></p>
+    	</div>
+
+	</div>
+
+	<!-- Modal -->
+	<div id="resultsModal" class="modal fade" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <!-- Modal Content -->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title">BEST MATCH</h4>
+	      </div>
+	      <div class="modal-body">
+	        <h3 id="matchName"></h3>
+	        <img id="matchImage" src="" alt>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+
+
+
+<script type="text/javascript">
+	// Chosen CSS
+	var config = {
+	'.chosen-select': {},
+	'.chosen-select-deselect'  : {allow_single_deselect:true},
+	'.chosen-select-no-single' : {disable_search_threshold:10},
+	'.chosen-select-no-results': {no_results_text:'Oops, nothing found!'}
+	}
+	for (var selector in config) {
+		$(selector).chosen(config[selector]);
+	}
+
+	// Capture form inputs
+	$("#submit").on("click", function () {
+
+		// Form Validation
+		function validateForm() {
+			var isValid = true;
+			$(".form-control").each(function() {
+				if($(this).val() === "")
+					isValid = false;
+			});
+
+			$(".chosen-select").each(function() {
+				if ($(this).val() === "")
+					isValid = false;
+			})
+			return isValid;
+		}
+
+		// If all required fields are filled
+		if (validateForm() == true) {
+
+			// Create an object data for user's input
+			var newUser = {
+				name: $("#name").val().trim(),
+				photo: $("#photo").val().trim(),
+				scores: [$("#num1").val().trim(), $("#num2").val().trim(), $("#num3").val().trim(), $("#num4").val().trim(), $("#num5").val().trim(), $("#num6").val().trim(), $("#num7").val().trim(), $("#num8").val().trim(), $("#num9").val().trim(), $("#num10").val().trim()]
+			}
+			console.log(newUser);
+
+			// Grabbing URL of website
+			// var currentURL = window.location.origin;
+
+			// AJAX post the data to the friends API
+			// $.post(currentURL + "/api/friends", newUser, function(data) {
+			$.post("/api/friends", newUser, function(data) {
+
+				// Grabbing results from AJAX post to display match's name and photo
+				$("#matchName").text(data.name);
+				$("#matchImage").attr("src", data.photo);
+
+				// Display modal with the best match
+				$("resultsModal").modal("toggle");
+
+				// Clear the form when submitting
+				$("#name").val("");
+				$("#photo").val("");
+				$("#num1").val(""); 
+
+			});
+		} else {
+			alert("Please fill out all fields before submitting!");
+		}
+
+		return false;
+
+
+
+
+	});
+
+</script>
+
+
+</body>
