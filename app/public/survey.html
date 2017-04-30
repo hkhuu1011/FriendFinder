@@ -143,14 +143,13 @@
 
 	<footer class="footer">
 		<div class="container">
-			<p><a href="api/friendsData">API Friends List</a> | <a href="https://github.com/hkhuu1011/FriendFinder.git">GitHubRepo</a></p>
+			<p><a href="api/friends">API Friends List</a> | <a href="https://github.com/hkhuu1011/FriendFinder.git">GitHubRepo</a></p>
     	</div>
 
 	</div>
 
 	<!-- Modal -->
 	<div id="resultsModal" class="modal fade" tabindex="-1" role="dialog">
-	  <div class="modal-dialog" role="document">
 	    <!-- Modal Content -->
 	    <div class="modal-content">
 	      <div class="modal-header">
@@ -158,17 +157,13 @@
 	        <h4 class="modal-title">BEST MATCH</h4>
 	      </div>
 	      <div class="modal-body">
-	        <h3 id="matchName"></h3>
-	        <img id="matchImage" src="" alt>
+
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	      </div>
 	    </div><!-- /.modal-content -->
-	  </div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
-
-
 
 
 <script type="text/javascript">
@@ -184,63 +179,70 @@
 	}
 
 	// Capture form inputs
-	$("#submit").on("click", function () {
+	$("#submit").on("click", function() {
 
 		// Form Validation
 		function validateForm() {
-			var isValid = true;
+			var valid = true;
 			$(".form-control").each(function() {
 				if($(this).val() === "")
-					isValid = false;
+					valid = false;
 			});
 
 			$(".chosen-select").each(function() {
 				if ($(this).val() === "")
-					isValid = false;
+					valid = false;
 			})
-			return isValid;
+			return valid;
 		}
 
 		// If all required fields are filled
 		if (validateForm() == true) {
 
 			// Create an object data for user's input
-			var newUser = {
+			var addFriend = {
 				name: $("#name").val().trim(),
 				photo: $("#photo").val().trim(),
-				scores: [$("#num1").val().trim(), $("#num2").val().trim(), $("#num3").val().trim(), $("#num4").val().trim(), $("#num5").val().trim(), $("#num6").val().trim(), $("#num7").val().trim(), $("#num8").val().trim(), $("#num9").val().trim(), $("#num10").val().trim()]
+				scores: [$("#num1").val(), 
+						$("#num2").val(), 
+						$("#num3").val(), 
+						$("#num4").val(), 
+						$("#num5").val(), 
+						$("#num6").val(), 
+						$("#num7").val(),
+						$("#num8").val(), 
+						$("#num9").val(), 
+						$("#num10").val()]
 			}
-			console.log(newUser);
+			console.log(addFriend);
 
 			// Grabbing URL of website
-			// var currentURL = window.location.origin;
+			var currentURL = window.location.origin;
 
 			// AJAX post the data to the friends API
-			// $.post(currentURL + "/api/friends", newUser, function(data) {
-			$.post("/api/friends", newUser, function(data) {
+			$.post(currentURL + "/api/friends", addFriend, function(data) {
+				if(data) {
+					alert("You have been added!!!");
+				};
 
 				// Grabbing results from AJAX post to display match's name and photo
-				$("#matchName").text(data.name);
-				$("#matchImage").attr("src", data.photo);
+				$(".modal-body").append('<p><strong>Your match is ' + data.name + '!</strong></p>');
+                $(".modal-body").append('<img src="' + data.photo + '">');
 
 				// Display modal with the best match
-				$("resultsModal").modal("toggle");
+				$("#resultsModal").modal("toggle");
 
 				// Clear the form when submitting
 				$("#name").val("");
 				$("#photo").val("");
-				$("#num1").val(""); 
 
-			});
+			})
+		// If there are missing fields, alert..	
 		} else {
 			alert("Please fill out all fields before submitting!");
 		}
 
 		return false;
-
-
-
-
 	});
 
 </script>
